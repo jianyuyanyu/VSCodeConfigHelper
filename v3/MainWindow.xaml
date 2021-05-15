@@ -4,9 +4,48 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VSCodeConfigHelper"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0"></Grid>
+        <TabControl Grid.Column="1">
+            <TabControl.ItemContainerStyle>
+                <Style TargetType="{x:Type TabItem}">
+                    <Style.Setters>
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                    </Style.Setters>
+                </Style>
+            </TabControl.ItemContainerStyle>
+            <TabItem Name="tabWorkspace">
+                <TextBlock>tabWorkspace</TextBlock>
+            </TabItem>
+            <TabItem Name="tabMingw">
+                <TextBlock>tabMingw</TextBlock>
+            </TabItem>
+            <TabItem Name="tabVscode">
+                <TextBlock>tabVscode</TextBlock>
+            </TabItem>
+            <TabItem Name="tabConfig">
+                <TextBlock>tabConfig</TextBlock>
+            </TabItem>
+            <TabItem Name="tabExecute">
+                <TextBlock>tabExecute</TextBlock>
+            </TabItem>
+            <TabItem Name="tabFinish">
+                <TextBlock>tabFinish</TextBlock>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Button>Hello</Button>
+        </Grid>
     </Grid>
 </Window>
