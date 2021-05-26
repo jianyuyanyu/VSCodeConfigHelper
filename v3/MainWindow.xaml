@@ -6,22 +6,23 @@
         xmlns:local="clr-namespace:VSCodeConfigHelper"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="VS Code 配置器" Height="450" Width="800">
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Column="0"></Grid>
         <TabControl Grid.Column="1">
             <TabControl.ItemContainerStyle>
                 <Style TargetType="{x:Type TabItem}">
                     <Style.Setters>
-                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <!--<Setter Property="Visibility" Value="Collapsed"/>-->
                     </Style.Setters>
                 </Style>
             </TabControl.ItemContainerStyle>
@@ -44,8 +45,14 @@
                 <TextBlock>tabFinish</TextBlock>
             </TabItem>
         </TabControl>
-        <Grid Grid.Column="1" Grid.Row="1">
-            <Button>Hello</Button>
-        </Grid>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Padding="3" Margin="5">上一步</Button>
+            <Button Padding="3" Margin="5">下一步</Button>
+            <Button Padding="3" Margin="5">取消</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock>谷雨同学制作 guyutongxue@163.com 版本</TextBlock>
+            <TextBlock>v3.?</TextBlock>
+        </StackPanel>
     </Grid>
 </Window>
